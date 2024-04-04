@@ -28,14 +28,14 @@ module "network" {
   env             = var.env
 }
 
-#module "sg" {
-#  source = "git@github.com:jeongminkyo/terraform-module.git//sg?ref=v0.0.1"
-#  vpc_id = module.network.id
-#  env    = var.env
-#  name   = var.name
-#  cidr   = var.cidr
-#}
-#
+module "sg" {
+  source = "git@github.com:jeongminkyo/terraform-module.git//sg?ref=v0.0.1"
+  vpc_id = module.network.id
+  env    = var.env
+  name   = var.name
+  cidr   = var.cidr
+}
+
 #module "rds" {
 #  source                 = "git@github.com:jeongminkyo/terraform-module.git//rds?ref=v0.0.1"
 #  env                    = var.env
