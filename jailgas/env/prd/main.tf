@@ -69,7 +69,7 @@ module "beanstalk" {
   env				= var.env
   vpc_id			= module.network.id
   public_subnets	= module.network.public_subnets
-  instance_type		= "t2.micro"
+  instance_type		= "t3.micro"
   keypair			= module.key-pair.key-pair
   certificate		= module.acm.certificate
   security_groups	= join(",", module.sg.ec2_security_groups)
