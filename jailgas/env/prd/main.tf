@@ -64,7 +64,7 @@ module "key-pair" {
 }
 
 module "beanstalk" {
-  source			= "git@github.com:jeongminkyo/terraform-module.git//beanstalk?ref=v0.0.4"
+  source			= "git@github.com:jeongminkyo/terraform-module.git//beanstalk?ref=v0.0.5"
   name				= var.name
   env				= var.env
   vpc_id			= module.network.id
