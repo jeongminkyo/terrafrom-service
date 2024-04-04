@@ -19,7 +19,7 @@ provider "aws" {
 }
 
 module "network" {
-  source          = "git@github.com:jeongminkyo/terraform-module.git//network?ref=v0.0.3"
+  source          = "git@github.com:jeongminkyo/terraform-module.git//network?ref=v0.0.4"
   name            = var.name
   cidr            = var.cidr
   public_subnets  = var.public_subnets
@@ -29,7 +29,7 @@ module "network" {
 }
 
 module "sg" {
-  source = "git@github.com:jeongminkyo/terraform-module.git//sg?ref=v0.0.3"
+  source = "git@github.com:jeongminkyo/terraform-module.git//sg?ref=v0.0.4"
   vpc_id = module.network.id
   env    = var.env
   name   = var.name
@@ -37,7 +37,7 @@ module "sg" {
 }
 
 module "rds" {
-  source                 = "git@github.com:jeongminkyo/terraform-module.git//rds?ref=v0.0.3"
+  source                 = "git@github.com:jeongminkyo/terraform-module.git//rds?ref=v0.0.4"
   env                    = var.env
   name                   = var.name
   private_rds_subnets_id = module.network.rds_subnets
@@ -53,18 +53,18 @@ module "rds" {
 }
 
 module "acm" {
-  source			= "git@github.com:jeongminkyo/terraform-module.git//acm?ref=v0.0.3"
+  source			= "git@github.com:jeongminkyo/terraform-module.git//acm?ref=v0.0.4"
   domain_name		= var.domain_name
 }
 
 module "key-pair" {
-  source	= "git@github.com:jeongminkyo/terraform-module.git//key-pair?ref=v0.0.3"
+  source	= "git@github.com:jeongminkyo/terraform-module.git//key-pair?ref=v0.0.4"
   env		= var.env
   name      = var.name
 }
 
 module "beanstalk" {
-  source			= "git@github.com:jeongminkyo/terraform-module.git//beanstalk?ref=v0.0.3"
+  source			= "git@github.com:jeongminkyo/terraform-module.git//beanstalk?ref=v0.0.4"
   name				= var.name
   env				= var.env
   vpc_id			= module.network.id
