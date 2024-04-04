@@ -52,15 +52,15 @@ module "rds" {
   security_groups_id     = module.sg.db
 }
 
+module "acm" {
+  source			= "git@github.com:jeongminkyo/terraform-module.git//acm?ref=v0.0.2"
+  domain_name		= var.domain_name
+}
+
 #module "key-pair" {
 #  source	= "git@github.com:jeongminkyo/terraform-module.git//key-pair?ref=v0.0.1"
 #  env		= var.env
 #  name      = var.name
-#}
-#
-#module "acm" {
-#  source			= "git@github.com:jeongminkyo/terraform-module.git//acm?ref=v0.0.1"
-#  domain_name		= var.domain_name
 #}
 #
 #module "beanstalk" {
