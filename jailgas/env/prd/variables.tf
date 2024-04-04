@@ -1,9 +1,3 @@
-variable "aws_access_key" {
-}
-
-variable "aws_secret_key" {
-}
-
 variable "env" {
   description = "env name"
   type        = string
