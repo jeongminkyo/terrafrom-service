@@ -19,7 +19,7 @@ provider "aws" {
 }
 
 module "network" {
-  source          = "git@github.com:jeongminkyo/terraform-module.git//network?ref=v0.0.1"
+  source          = "git@github.com:jeongminkyo/terraform-module.git//network?ref=v0.0.2"
   name            = var.name
   cidr            = var.cidr
   public_subnets  = var.public_subnets
@@ -29,7 +29,7 @@ module "network" {
 }
 
 module "sg" {
-  source = "git@github.com:jeongminkyo/terraform-module.git//sg?ref=v0.0.1"
+  source = "git@github.com:jeongminkyo/terraform-module.git//sg?ref=v0.0.2"
   vpc_id = module.network.id
   env    = var.env
   name   = var.name
@@ -37,7 +37,7 @@ module "sg" {
 }
 
 module "rds" {
-  source                 = "git@github.com:jeongminkyo/terraform-module.git//rds?ref=v0.0.1"
+  source                 = "git@github.com:jeongminkyo/terraform-module.git//rds?ref=v0.0.2"
   env                    = var.env
   name                   = var.name
   private_rds_subnets_id = module.network.rds_subnets
