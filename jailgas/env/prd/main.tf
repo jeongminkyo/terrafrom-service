@@ -36,22 +36,22 @@ module "sg" {
   cidr   = var.cidr
 }
 
-#module "rds" {
-#  source                 = "git@github.com:jeongminkyo/terraform-module.git//rds?ref=v0.0.1"
-#  env                    = var.env
-#  name                   = var.name
-#  private_rds_subnets_id = module.network.rds_subnets
-#  rds_storage            = var.rds_storage
-#  db_engine              = var.db_engine
-#  db_engine_version      = var.db_engine_version
-#  db_instance_class      = var.db_instance_class
-#  db_user_name           = var.db_user_name
-#  db_password            = var.db_password
-#  database_name          = var.database_name
-#  database_port          = var.database_port
-#  security_groups_id     = module.sg.db
-#}
-#
+module "rds" {
+  source                 = "git@github.com:jeongminkyo/terraform-module.git//rds?ref=v0.0.1"
+  env                    = var.env
+  name                   = var.name
+  private_rds_subnets_id = module.network.rds_subnets
+  rds_storage            = var.rds_storage
+  db_engine              = var.db_engine
+  db_engine_version      = var.db_engine_version
+  db_instance_class      = var.db_instance_class
+  db_user_name           = var.db_user_name
+  db_password            = var.db_password
+  database_name          = var.database_name
+  database_port          = var.database_port
+  security_groups_id     = module.sg.db
+}
+
 #module "key-pair" {
 #  source	= "git@github.com:jeongminkyo/terraform-module.git//key-pair?ref=v0.0.1"
 #  env		= var.env
