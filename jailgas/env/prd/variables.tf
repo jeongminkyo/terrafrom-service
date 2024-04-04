@@ -85,6 +85,6 @@ variable "database_port" {
 variable "domain_name" {
   description	= "jailgas.com domain"
   type			= string
-  default		= "jailgas.com"
+  default		= "*.jailgas.com"
 }
 
