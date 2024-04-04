@@ -9,7 +9,7 @@ terraform {
     organization = "jeongminkyo"
 
     workspaces {
-      name = "jailgas"
+      name = "jailgas-production"
     }
   }
 }
@@ -64,7 +64,7 @@ module "key-pair" {
 }
 
 #module "beanstalk" {
-#  source			= "git@github.com:jeongminkyo/terraform-module.git//beanstalk?ref=v0.0.1"
+#  source			= "git@github.com:jeongminkyo/terraform-module.git//beanstalk?ref=v0.0.3"
 #  name				= var.name
 #  env				= var.env
 #  vpc_id			= module.network.id
