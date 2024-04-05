@@ -63,14 +63,14 @@ module "key-pair" {
   name      = var.name
 }
 
-module "beanstalk" {
-  source			= "git@github.com:jeongminkyo/terraform-module.git//beanstalk?ref=v0.0.5"
-  name				= var.name
-  env				= var.env
-  vpc_id			= module.network.id
-  public_subnets	= module.network.public_subnets
-  instance_type		= "t3.micro"
-  keypair			= module.key-pair.key-pair
-  certificate		= module.acm.certificate
-  security_groups	= join(",", module.sg.ec2_security_groups)
-}
+#module "beanstalk" {
+#  source			= "git@github.com:jeongminkyo/terraform-module.git//beanstalk?ref=v0.0.5"
+#  name				= var.name
+#  env				= var.env
+#  vpc_id			= module.network.id
+#  public_subnets	= module.network.public_subnets
+#  instance_type		= "t3.micro"
+#  keypair			= module.key-pair.key-pair
+#  certificate		= module.acm.certificate
+#  security_groups	= join(",", module.sg.ec2_security_groups)
+#}
