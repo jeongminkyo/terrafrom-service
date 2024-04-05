@@ -55,7 +55,7 @@ variable "db_engine_version" {
 variable "db_instance_class" {
   description = "rds instance class"
   type        = string
-  default     = "db.t2.micro"
+  default     = "db.t3.micro"
 }
 
 variable "db_user_name" {
